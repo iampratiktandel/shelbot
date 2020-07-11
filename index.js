@@ -24,23 +24,23 @@ client.on('message', message => {
 		if (!userReply) return message.channel.send(`How to play: \`${prefix}rps <rock|paper|scissors>\``);
 		if (!acceptedReplies.includes(userReply)) return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
 
-		console.log('User Reply:', userReply);
-		console.log('Bot Reply:', botReply);
+		// console.log('User Reply:', userReply);
+		// console.log('Bot Reply:', botReply);
 
-		if (botReply === userReply) return message.reply('It\'s a tie! We had the same choice.');
+		if (botReply === userReply) return message.reply('It\'s a tie!');
 
 		switch (userReply) {
 		case 'rock': {
-			if (botReply === 'paper') return message.reply('I won!');
-			else return message.reply('You won!');
+			if (botReply === 'paper') return message.reply(`\n Your Choice : ${userReply}\n Bot's Choice : ${botReply}\n Bot won!`);
+			else return message.reply(`\n Your Choice : ${userReply}\n Bot's Choice : ${botReply}\n You won!`);
 		}
 		case 'paper': {
-			if (botReply === 'scissors') return message.reply('I won!');
-			else return message.reply('You won!');
+			if (botReply === 'scissors') return message.reply(`\n Your Choice : ${userReply}\n Bot's Choice : ${botReply}\n Bot won!`);
+			else return message.reply(`\n Your Choice : ${userReply}\n Bot's Choice : ${botReply}\n You won!`);
 		}
 		case 'scissors': {
-			if (botReply === 'rock') return message.reply('I won!');
-			else return message.reply('You won!');
+			if (botReply === 'rock') return message.reply(`\n Your Choice : ${userReply}\n Bot's Choice : ${botReply}\n Bot won!`);
+			else return message.reply(`\n Your Choice : ${userReply}\n Bot's Choice : ${botReply}\n You won!`);
 		}
 		default: {
 			return message.channel.send(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
