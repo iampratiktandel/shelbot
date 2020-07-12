@@ -27,7 +27,7 @@ client.on('message', message => {
 	}
 
 	if (command === 'rps') {
-		const acceptedReplies = ['rock', 'paper', 'scissors', 'lizard', 'spock', 'help'];
+		const acceptedReplies = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 		const random = Math.floor((Math.random() * acceptedReplies.length));
 		const botReply = acceptedReplies[random];
 
