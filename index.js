@@ -119,7 +119,18 @@ client.on('message', message => {
 			message.reply(`Only these responses are accepted: \`${acceptedReplies.join(', ')}\``);
 		}
 
-		message.channel.send(`------SCORECARD------\n  Bot: ${bScore}\n  User: ${uScore}\n---------------------------`);
+		const scores = new Discord.MessageEmbed()
+			.setColor('#0099ff')
+			.setTitle('Scorecard')
+			.setThumbnail('https://github.com/iampratiktandel/rock-paper-scissor-bot/blob/master/logo/shelbot-logo.png?raw=true')
+			.addFields(
+				{ name: 'Bot', value: `${bScore}`, inline: true },
+				{ name: 'User', value: `${uScore}`, inline: true },
+			)
+			.setTimestamp()
+			.setFooter('Game Score');
+
+		message.channel.send({ embed: scores });
 		if (bScore == 3) {
 			message.reply('Bot won the match');
 			bScore = 0;
