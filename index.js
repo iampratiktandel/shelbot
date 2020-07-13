@@ -6,26 +6,25 @@ const { prefix } = require('./config.json');
 const client = new Discord.Client();
 let bScore = 0, uScore = 0;
 
+const rules = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('How to play')
+	.setAuthor('Rock Paper Scissors Lizard Spock',
+		'https://github.com/iampratiktandel/rock-paper-scissor-bot/blob/master/logo/shelbot-logo.png?raw=true',
+		'https://github.com/iampratiktandel/rock-paper-scissor-bot')
+	.setDescription('Player can type any choice from [rock, paper, scissors, lizard, spock]. The bot will generate a random choice. Player and Bot\'s choice will be compared and the one with the advantage will win the round. More info about the choices are displayed below.\nThe first one to scores 3 points will win the match.')
+	.setThumbnail('https://github.com/iampratiktandel/rock-paper-scissor-bot/blob/master/logo/shelbot-logo.png?raw=true')
+	.addFields(
+		{ name: 'Game Rules', value: '>> Scissors cuts Paper\n >> Paper covers Rock\n >> Rock crushes Lizard\n >> Rock crushes Lizard\n >> Lizard poisons Spock\n >> Spock smashes Scissors\n >> Scissors decapitates Lizard\n >> Lizard eats Paper\n >> Paper disproves Spock\n >> Spock vaporizes Rock\n >> Rock crushes Scissors' },
+	)
+	.setTimestamp()
+	.setFooter('Shelbot Guide');
+
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
-
-	if (command === 'help') {
-		message.channel.send(`
-		Rock | Paper | Scissors | Lizard | Spock
-		Scissors cuts Paper
-		Paper covers Rock
-		Rock crushes Lizard
-		Lizard poisons Spock
-		Spock smashes Scissors
-		Scissors decapitates Lizard
-		Lizard eats Paper
-		Paper disproves Spock
-		Spock vaporizes Rock
-		Rock crushes Scissors`);
-	}
 
 	if (command === 'rps') {
 		const acceptedReplies = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
@@ -121,15 +120,19 @@ client.on('message', message => {
 		}
 
 		message.channel.send(`------SCORECARD------\n  Bot: ${bScore}\n  User: ${uScore}\n---------------------------`);
-		if (bScore == 5) {
+		if (bScore == 3) {
 			message.reply('Bot won the match');
 			bScore = 0;
 			uScore = 0;
-		} else if (uScore == 5) {
+		} else if (uScore == 3) {
 			message.reply('You won the match');
 			bScore = 0;
 			uScore = 0;
 		}
+	}
+
+	if (command === 'help') {
+		message.channel.send({ embed: rules });
 	}
 });
 
