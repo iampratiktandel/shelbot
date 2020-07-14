@@ -17,7 +17,7 @@ const rules = new Discord.MessageEmbed()
 	.addFields(
 		{ name: 'Command', value: `${prefix}rps [choice]\nExample: !rps rock\n\nAvailable Choices : rock, paper, scissors, lizard, spock\n` },
 		{ name: 'Game Rules', value:
-		'>> Scissors cuts Paper\n>> Paper covers Rock\n>> Rock crushes Lizard\n>> Rock crushes Lizard\n>> Lizard poisons Spock\n>> Spock smashes Scissors \n>> Scissors decapitates Lizard\n>> Lizard eats Paper\n>> Paper disproves Spock\n>> Spock vaporizes Rock\n>> Rock crushes Scissors' },
+		'>> Scissors cuts Paper\n>> Paper covers Rock\n>> Rock crushes Lizard\n>> Lizard poisons Spock\n>> Spock smashes Scissors \n>> Scissors decapitates Lizard\n>> Lizard eats Paper\n>> Paper disproves Spock\n>> Spock vaporizes Rock\n>> Rock crushes Scissors' },
 	)
 	.setTimestamp()
 	.setFooter('Shelbot Guide');
