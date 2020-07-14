@@ -4,8 +4,18 @@ Shelbot is a discord bot that plays Rock, Paper, Scissors, Lizard, Spock.
 # Watch Video
 [How to play Rock Paper Scissors Lizard Spock](https://youtu.be/zjoVuV8EeOU)
 
+# How to play
+Player can type any choice from [rock, paper, scissors, lizard, spock]. The bot will generate a random choice. Player and Bot's choice will be compared and the one with the advantage will win the round. More info about the choices are displayed below.
+The first one to scores 3 points will win the match.
+
+# Command
+!rps [choice]
+Example: !rps rock
+
+Available Choices : rock, paper, scissors, lizard, spock
+
 # Rules!
-![Rock-Paper-Scissors-Lizard-Spock-Rules](https://github.com/iampratiktandel/rock-paper-scissor-bot/blob/master/logo/shelbot-logo.png?raw=true)
+![Rock-Paper-Scissors-Lizard-Spock-Rules](https://github.com/iampratiktandel/shelbot/blob/master/logo/shelbot-logo.png?raw=true)
 
   - Scissors cuts Paper
   - Paper covers Rock
