@@ -1,6 +1,9 @@
 # Shelbot
 Shelbot is a discord bot that plays Rock, Paper, Scissors, Lizard, Spock.
 
+# Add Shelbot to your server
+https://discord.com/oauth2/authorize?client_id=731202231671455835&permissions=2048&scope=bot
+
 # Watch Video
 [How to play Rock Paper Scissors Lizard Spock](https://youtu.be/zjoVuV8EeOU)
 
